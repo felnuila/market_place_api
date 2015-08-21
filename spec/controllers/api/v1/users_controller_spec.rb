@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Api::V1::UsersController do
-
   describe "GET #show" do
     before(:each) do
       @user = FactoryGirl.create :user
@@ -35,8 +34,7 @@ describe Api::V1::UsersController do
     context "when is not created" do
       before(:each) do
         #notice I'm not including the email
-        @invalid_user_attributes = { password: "12345678",
-         password_confirmation: "12345678" }
+        @invalid_user_attributes = { password: "12345678", password_confirmation: "12345678" }
          post :create, { user: @invalid_user_attributes }, format: :json
        end
 
@@ -55,6 +53,7 @@ describe Api::V1::UsersController do
   end
 
   describe "PUT/PATCH #update" do
+
 
     context "when is successfully updated" do
       before(:each) do
